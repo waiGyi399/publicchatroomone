@@ -1,0 +1,142 @@
+// npm init -y
+//npm install firebase or npm install firebase@latest 
+//npm install express or npm install express@lastest
+
+
+=> How to use Vite 
+1. Install 
+   npm install --save-dev vite
+
+2.Create a new file as vite.config.js file
+
+import {defineConfig} from 'vite';
+
+export default defineConfig({
+    root:'./src',
+    build:{
+        outDir:"../dist",  
+    }
+});
+   
+3.Update package.json 
+"scripts": {
+    "dev":"vite",
+    "build":"vite build"
+}
+
+4.Run Build the app for production 
+   npm run build 
+
+5.Run Yite in developement server 
+   npm run dev 
+
+-----------------------------------
+
+=> how to install Tailwind Css 
+
+1. Install Tailwind Css
+https://tailwindcss.com/
+
+Using PostCSS
+npm install -D tailwindcss postcss autoprefixer
+
+npx tailwindcss init
+
+2. Add Tailwind to your PostCSS configuration
+
+create postcss.config.js manually (Note : do not forgot to exprt as Es6 )
+
+export default = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  }
+}
+
+3.Configure your template paths
+"./src/**/*.{html,js}"
+
+4. Add the Tailwind directives to your CSS
+create a css file located to (eg. src/css/main.css)
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+5. inclue css link to each html files
+<link href="" rel="stylesheet"/>
+
+npm run build 
+npm run dev
+---------------------------------------
+
+=>Enable Email / Password Authentication 
+Make sure you have enable Email/Password authentication in your firebase console
+
+Authentication > Sign-in Method 
+Ensure Email/Password is enable 
+
+=>Enable Google Sign-In firebase console 
+Enable Google under the list of providers 
+
+Public-facing name for projet = your firebase project id 
+Support email for project = your firebase gmail address
+Save the changes 
+
+
+---------------------------------------------------------------
+
+
+=> Customize the Password Reset Email Template 
+you can Customize the Password reset email link to redirected user to a specific page in your app.
+
+Authentication > Template  >  Password reset > click Edit pen 
+
+------------------ -----------------------------------------------
+=>Install date fns
+https://date-fns.org/docs/Getting-Started
+
+npm install date-fns --save
+
+To main file
+import { format } from "date-fns";
+
+
+-------------------------------------
+=>Install Fontawsome
+import in src/main.js or src/js/authsigninapp.js and src/js/app.js
+import "@fortawesome/fontawesome-free/css/all.min.css"; 
+
+npm install @fortawesome/fontawesome-free  
+
+---------------------------------------------
+
+=>Install Express 
+npm install express 
+
+nodemon server.js
+
+=>improt 
+
+import express from 'express';
+
+------------------------------------------------------
+
+==>Deploy on Cloud Server 
+1.your project need Repo Public/private to Github 
+
+2.https://render.com/ 
+3.Prepare the build output 
+  your project must builded and typically located in the "dist" directy
+
+4.Create a new statice site 
+  click > "New" > Static site > Github > your account > choose repo > click -> connect
+
+  5.Name :publicchat
+    Branch : main 
+    Build Command : npm run build  (React,Vue,Value,etc...) ng build (..)
+    Build command -> npm run build
+    Public Directory -> dist
+    
+
+6.Enviroment Variables = copy paste. env dte to Environment Variable 
